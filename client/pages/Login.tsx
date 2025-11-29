@@ -25,16 +25,9 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        {/* Logo */}
-        <div className="flex justify-center mb-8">
-          <div className="w-8 h-8 bg-accent rounded flex items-center justify-center">
-            <span className="text-sm font-bold text-accent-foreground">V</span>
-          </div>
-        </div>
-
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-medium text-foreground mb-2">
+          <h1 className="text-2xl text-foreground mb-2">
             Welcome to VanIA
           </h1>
           <p className="text-sm text-foreground/60">Sign in to your account</p>
