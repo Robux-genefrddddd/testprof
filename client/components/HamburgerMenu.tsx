@@ -57,7 +57,7 @@ export default function HamburgerMenu({
       >
         {/* Header with close button */}
         <div className="sticky top-0 z-10 border-b border-sidebar-border px-5 py-4 flex items-center justify-between bg-sidebar-background">
-          <span className="text-xs font-semibold text-sidebar-foreground/60 uppercase tracking-wider">
+          <span className="text-xs text-sidebar-foreground/60 uppercase tracking-wider">
             Menu
           </span>
           <button
@@ -75,10 +75,10 @@ export default function HamburgerMenu({
             <div className="flex items-start gap-3">
               {/* Minimal avatar - monogram */}
               <div className="w-10 h-10 bg-sidebar-accent border border-sidebar-border rounded flex items-center justify-center flex-shrink-0">
-                <span className="text-xs font-medium text-sidebar-foreground">AJ</span>
+                <span className="text-xs text-sidebar-foreground">AJ</span>
               </div>
               <div className="flex-1 min-w-0 pt-0.5">
-                <p className="text-sm font-medium text-sidebar-foreground truncate">
+                <p className="text-sm text-sidebar-foreground truncate">
                   Alex Johnson
                 </p>
                 <p className="text-xs text-sidebar-foreground/50 truncate">
@@ -90,13 +90,13 @@ export default function HamburgerMenu({
 
           {/* Plan Section */}
           <div className="space-y-2 border-t border-sidebar-border pt-4">
-            <p className="text-xs text-sidebar-foreground/50 font-medium uppercase tracking-wider">
+            <p className="text-xs text-sidebar-foreground/50 uppercase tracking-wider">
               Plan
             </p>
             <p className="text-sm text-sidebar-foreground">Free</p>
             <a
               href="#"
-              className="inline-flex text-xs text-accent hover:text-accent/80 font-medium transition-colors"
+              className="inline-flex text-xs text-accent hover:text-accent/80 transition-colors"
             >
               Upgrade to Pro →
             </a>
@@ -104,13 +104,13 @@ export default function HamburgerMenu({
 
           {/* Credits Section */}
           <div className="space-y-2 border-t border-sidebar-border pt-4">
-            <p className="text-xs text-sidebar-foreground/50 font-medium uppercase tracking-wider">
+            <p className="text-xs text-sidebar-foreground/50 uppercase tracking-wider">
               Credits
             </p>
 
             {/* Numbers */}
             <div className="flex items-baseline gap-1">
-              <span className="text-lg font-semibold text-sidebar-foreground">
+              <span className="text-lg text-sidebar-foreground">
                 1,250
               </span>
               <span className="text-xs text-sidebar-foreground/50">/ 5,000</span>
