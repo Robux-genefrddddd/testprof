@@ -83,7 +83,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-3 py-2.5 rounded bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm transition-colors duration-150 flex items-center justify-center gap-2 mt-2"
+              className="w-full px-3 py-2.5 rounded bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed text-sm transition-colors duration-150 flex items-center justify-center gap-2 mt-2"
             >
               {isLoading ? (
                 <>
