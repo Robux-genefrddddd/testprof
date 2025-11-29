@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import ChatHeader from "@/components/ChatHeader";
 import ChatMessages from "@/components/ChatMessages";
 import ChatInput from "@/components/ChatInput";
@@ -15,6 +15,11 @@ export default function Index() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleStartChat = useCallback(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const handleSendMessage = useCallback(async (userMessage: string) => {
     if (!userMessage.trim()) return;
