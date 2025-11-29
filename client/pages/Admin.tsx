@@ -15,9 +15,9 @@ export default function Admin() {
         <div className="h-full max-w-5xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-6 h-6 bg-accent rounded flex items-center justify-center">
-              <span className="text-xs font-bold text-accent-foreground">A</span>
+              <span className="text-xs text-accent-foreground">A</span>
             </span>
-            <h1 className="text-sm font-medium text-foreground">Admin</h1>
+            <h1 className="text-sm text-foreground">Admin</h1>
           </div>
           <button className="p-1.5 text-foreground hover:bg-secondary/40 rounded transition-colors">
             <LogOut className="w-5 h-5" />
@@ -29,7 +29,7 @@ export default function Admin() {
       <div className="pt-16 pb-8 px-6 max-w-5xl mx-auto">
         {/* Title */}
         <div className="mb-8">
-          <h2 className="text-xl font-medium text-foreground mb-1">Dashboard</h2>
+          <h2 className="text-xl text-foreground mb-1">Dashboard</h2>
           <p className="text-xs text-foreground/60">Overview of VanIA platform</p>
         </div>
 
