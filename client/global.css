@@ -114,66 +114,52 @@
 }
 
 @layer components {
-  /* Premium button baseline */
-  .btn-premium {
-    @apply px-4 py-2.5 rounded-[6px] font-medium text-sm transition-all duration-200 ease-out;
-    @apply hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background;
+  /* Minimal button - professional */
+  .btn-minimal {
+    @apply px-3 py-2 rounded text-sm font-medium transition-colors duration-150;
+    @apply focus:outline-none;
   }
 
-  .btn-premium-primary {
-    @apply btn-premium bg-accent text-accent-foreground hover:bg-accent/90;
+  .btn-minimal-primary {
+    @apply btn-minimal bg-accent text-accent-foreground hover:bg-accent/90;
   }
 
-  .btn-premium-secondary {
-    @apply btn-premium bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  .btn-minimal-secondary {
+    @apply btn-minimal bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
 
-  .btn-premium-ghost {
-    @apply btn-premium hover:bg-secondary/50 text-foreground;
+  .btn-minimal-ghost {
+    @apply btn-minimal text-foreground hover:bg-secondary/30;
   }
 
-  /* Premium input baseline */
-  .input-premium {
-    @apply w-full px-4 py-2.5 rounded-[6px] bg-input border border-border text-foreground;
-    @apply transition-all duration-200 ease-out;
+  /* Clean input - no glow */
+  .input-clean {
+    @apply w-full px-3 py-2 rounded bg-input border border-border text-foreground text-sm;
+    @apply transition-colors duration-150;
     @apply placeholder:text-muted-foreground;
-    @apply focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent;
+    @apply focus:outline-none focus:border-accent;
   }
 
-  /* Premium card */
-  .card-premium {
-    @apply bg-card border border-border rounded-[8px] p-6 transition-all duration-200;
-    @apply hover:border-accent/30;
+  /* Minimal card */
+  .card-minimal {
+    @apply bg-card border border-border rounded p-4 transition-colors duration-150;
   }
 
-  /* Premium message bubble */
+  /* Message bubble - minimal and sober */
   .message-bubble {
     @apply animate-message-fade;
   }
 
   .message-bubble-ai {
-    @apply bg-secondary/50 border border-secondary/30 rounded-[12px] px-4 py-3 text-foreground;
+    @apply bg-secondary border border-secondary/40 rounded-md px-3 py-2 text-foreground text-sm;
   }
 
   .message-bubble-user {
-    @apply bg-accent/15 border border-accent/30 rounded-[12px] px-4 py-3 text-foreground;
+    @apply bg-secondary border border-secondary/60 rounded-md px-3 py-2 text-foreground text-sm;
   }
 
-  /* Subtle shadow for premium feel */
-  .shadow-premium {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .shadow-premium-sm {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .shadow-premium-lg {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Backdrop overlay for modals */
-  .backdrop-blur-premium {
-    backdrop-filter: blur(8px);
+  /* Minimal overlay */
+  .overlay-minimal {
+    backdrop-filter: blur(4px);
   }
 }
