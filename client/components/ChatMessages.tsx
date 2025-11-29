@@ -47,7 +47,7 @@ export default function ChatMessages({ messages }: ChatMessagesProps) {
             >
               {message.role === "assistant" && (
                 <div className="w-6 h-6 bg-accent rounded flex items-center justify-center flex-shrink-0">
-                  <span className="text-xs font-bold text-accent-foreground">V</span>
+                  <span className="text-xs text-accent-foreground">A</span>
                 </div>
               )}
 
