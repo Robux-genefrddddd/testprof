@@ -80,7 +80,7 @@ export default function Admin() {
 
         {/* Data Table */}
         <div className="card-minimal overflow-x-auto">
-          <h3 className="text-sm font-medium text-foreground mb-4">Recent Activity</h3>
+          <h3 className="text-sm text-foreground mb-4">Recent Activity</h3>
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-border/50">
