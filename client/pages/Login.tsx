@@ -38,7 +38,7 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-foreground uppercase tracking-wider">
+              <label className="block text-xs text-foreground uppercase tracking-wider">
                 Email
               </label>
               <div className="relative">
