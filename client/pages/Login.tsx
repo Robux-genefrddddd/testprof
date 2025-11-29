@@ -56,7 +56,7 @@ export default function Login() {
 
             {/* Password */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-foreground uppercase tracking-wider">
+              <label className="block text-xs text-foreground uppercase tracking-wider">
                 Password
               </label>
               <div className="relative">
