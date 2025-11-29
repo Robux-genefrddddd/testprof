@@ -100,10 +100,14 @@ export default function Index() {
         <ChatHeader onMenuClick={() => setIsMenuOpen(!isMenuOpen)} />
 
         {/* Messages */}
-        <ChatMessages messages={messages} />
+        <ChatMessages messages={messages} onStartChat={handleStartChat} />
 
         {/* Input */}
-        <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+        <ChatInput
+          ref={inputRef}
+          onSendMessage={handleSendMessage}
+          isLoading={isLoading}
+        />
       </div>
     </div>
   );
