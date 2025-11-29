@@ -56,7 +56,7 @@ export default function Admin() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Main Chart */}
           <div className="lg:col-span-2 card-minimal">
-            <h3 className="text-sm font-medium text-foreground mb-4">User Activity</h3>
+            <h3 className="text-sm text-foreground mb-4">User Activity</h3>
             <div className="h-48 bg-secondary/30 rounded border border-border flex items-center justify-center">
               <p className="text-xs text-foreground/40">Chart placeholder</p>
             </div>
@@ -64,7 +64,7 @@ export default function Admin() {
 
           {/* Side Panel */}
           <div className="card-minimal">
-            <h3 className="text-sm font-medium text-foreground mb-4">Top Models</h3>
+            <h3 className="text-sm text-foreground mb-4">Top Models</h3>
             <div className="space-y-3">
               {["GPT-4", "Claude 3", "Llama 2"].map((model, idx) => (
                 <div key={idx} className="flex items-center justify-between text-xs pb-3 border-b border-border/50 last:border-b-0 last:pb-0">
