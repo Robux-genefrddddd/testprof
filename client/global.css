@@ -12,28 +12,28 @@
    * Inspired by Linear, Vercel, Perplexity, Arc, Raycast
   */
   :root {
-    /* Ultra-refined dark backgrounds */
-    --background: 210 11% 8.3%;
-    --foreground: 210 8% 85%;
+    /* Pure black backgrounds */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 85%;
 
     /* Surfaces - very subtle contrast */
-    --card: 210 10% 10%;
-    --card-foreground: 210 8% 85%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 85%;
 
-    --popover: 210 10% 10%;
-    --popover-foreground: 210 8% 85%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 85%;
 
     /* Primary accent - subtle blue-grey, not flashy */
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - neutral grey surfaces */
-    --secondary: 210 8% 15%;
-    --secondary-foreground: 210 8% 78%;
+    /* Secondary - neutral dark surfaces */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 78%;
 
     /* Muted elements - subtle greys */
-    --muted: 210 7% 20%;
-    --muted-foreground: 210 8% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
     /* Accent - subtle blue-grey for interactive states */
     --accent: 217 91% 60%;
@@ -44,20 +44,20 @@
     --destructive-foreground: 210 40% 98%;
 
     /* Borders - very subtle */
-    --border: 210 8% 16%;
-    --input: 210 10% 12%;
+    --border: 0 0% 12%;
+    --input: 0 0% 8%;
     --ring: 217 91% 60%;
 
     --radius: 0.375rem;
 
     /* Sidebar - minimal and professional */
-    --sidebar-background: 210 10% 9%;
-    --sidebar-foreground: 210 8% 82%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 82%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 8% 18%;
-    --sidebar-accent-foreground: 210 8% 82%;
-    --sidebar-border: 210 8% 16%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 82%;
+    --sidebar-border: 0 0% 12%;
     --sidebar-ring: 217 91% 60%;
   }
 }
