@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Send } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -14,7 +13,7 @@ export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) 
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      const newHeight = Math.min(textareaRef.current.scrollHeight, 120);
+      const newHeight = Math.min(textareaRef.current.scrollHeight, 100);
       textareaRef.current.style.height = newHeight + "px";
     }
   }, [message]);
@@ -38,25 +37,19 @@ export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) 
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-10 border-t border-border/50">
-      <div className="bg-background/80 backdrop-blur-md">
-        <div className="max-w-3xl mx-auto px-4 py-4">
-          <form onSubmit={handleSubmit} className="flex gap-3 items-end">
-            {/* Input Area */}
+    <div className="fixed bottom-0 left-0 right-0 z-10 border-t border-border">
+      <div className="bg-background/50">
+        <div className="max-w-3xl mx-auto px-4 py-3">
+          <form onSubmit={handleSubmit} className="flex gap-2 items-end">
+            {/* Textarea */}
             <div className="flex-1 relative">
               <textarea
                 ref={textareaRef}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Write a message... (Shift+Enter for new line)"
-                className={cn(
-                  "w-full px-4 py-2.5 rounded-lg bg-input border border-border text-foreground text-sm",
-                  "placeholder:text-foreground/40 resize-none",
-                  "transition-all duration-200 ease-out",
-                  "focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30",
-                  "min-h-[44px] max-h-[120px]"
-                )}
+                placeholder="Write a message..."
+                className="w-full px-3 py-2 rounded bg-input border border-border text-foreground text-sm placeholder:text-foreground/40 resize-none focus:outline-none focus:border-accent transition-colors duration-150 min-h-10 max-h-24"
               />
             </div>
 
@@ -64,21 +57,18 @@ export default function ChatInput({ onSendMessage, isLoading }: ChatInputProps) 
             <button
               type="submit"
               disabled={!message.trim() || isLoading}
-              className={cn(
-                "p-2.5 rounded-lg transition-all duration-200 ease-out flex-shrink-0",
-                "focus:outline-none focus:ring-1 focus:ring-accent",
+              className={`p-2 rounded transition-colors duration-150 flex-shrink-0 ${
                 message.trim() && !isLoading
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90 cursor-pointer"
-                  : "bg-secondary/50 text-foreground/40 cursor-not-allowed"
-              )}
+                  ? "text-accent hover:bg-secondary/40"
+                  : "text-foreground/30"
+              }`}
               aria-label="Send message"
             >
               <Send className="w-5 h-5" />
             </button>
           </form>
-
           <p className="text-xs text-foreground/40 mt-2">
-            VanIA uses AI to help you. Always verify important information.
+            Shift+Enter for a new line
           </p>
         </div>
       </div>
