@@ -133,7 +133,7 @@ export default function HamburgerMenu({
               className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm text-sidebar-foreground hover:bg-sidebar-accent/40 transition-colors duration-150"
             >
               <History className="w-4 h-4 text-sidebar-foreground/50" />
-              <span>History</span>
+              History
             </button>
 
             <button
@@ -141,7 +141,7 @@ export default function HamburgerMenu({
               className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm text-sidebar-foreground hover:bg-sidebar-accent/40 transition-colors duration-150"
             >
               <Settings className="w-4 h-4 text-sidebar-foreground/50" />
-              <span>Settings</span>
+              Settings
             </button>
 
             <button
@@ -149,7 +149,7 @@ export default function HamburgerMenu({
               className="w-full flex items-center gap-3 px-3 py-2 rounded text-sm text-sidebar-foreground hover:bg-sidebar-accent/40 transition-colors duration-150"
             >
               <CreditCard className="w-4 h-4 text-sidebar-foreground/50" />
-              <span>Billing</span>
+              Billing
             </button>
           </div>
         </div>
