@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,94 +7,100 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
+   * Dark Premium Theme - VanIA
+   * HSL values for premium dark design
+   * Inspired by Linear, Vercel, Perplexity, Superhuman
   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Deep dark backgrounds */
+    --background: 0 0% 5.5%;
+    --foreground: 210 13% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card and popover surfaces - slightly lighter than background */
+    --card: 0 0% 7.8%;
+    --card-foreground: 210 13% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 7.8%;
+    --popover-foreground: 210 13% 96%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary accent - subtle blue-grey */
+    --primary: 208 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary accent - muted cool tone */
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 13% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted elements */
+    --muted: 215 15% 25%;
+    --muted-foreground: 210 13% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - light blue-grey for interactive elements */
+    --accent: 205 85% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive state */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 215 15% 18%;
+    --input: 0 0% 10%;
+    --ring: 205 85% 54%;
+
+    --radius: 0.375rem;
+
+    /* Sidebar premium dark */
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 210 13% 90%;
+    --sidebar-primary: 205 85% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 30%;
+    --sidebar-accent-foreground: 210 13% 96%;
+    --sidebar-border: 215 15% 18%;
+    --sidebar-ring: 205 85% 54%;
+  }
+
+  /* Force dark mode always on for VanIA */
+  :root {
+    --background: 0 0% 5.5%;
+    --foreground: 210 13% 96%;
+
+    --card: 0 0% 7.8%;
+    --card-foreground: 210 13% 96%;
+
+    --popover: 0 0% 7.8%;
+    --popover-foreground: 210 13% 96%;
+
+    --primary: 208 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 13% 96%;
+
+    --muted: 215 15% 25%;
+    --muted-foreground: 210 13% 65%;
+
+    --accent: 205 85% 54%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 15% 18%;
+    --input: 0 0% 10%;
+    --ring: 205 85% 54%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 210 13% 90%;
+    --sidebar-primary: 205 85% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 215 25% 30%;
+    --sidebar-accent-foreground: 210 13% 96%;
+    --sidebar-border: 215 15% 18%;
+    --sidebar-ring: 205 85% 54%;
   }
 }
 
