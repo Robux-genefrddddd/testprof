@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Mail, Lock, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,12 +12,9 @@ export default function Login() {
     setError("");
     setIsLoading(true);
 
-    // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      // In a real app, authenticate here
       console.log("Login attempt:", { email, password });
-      // Redirect to dashboard
     } catch (err) {
       setError("Authentication failed. Please try again.");
     } finally {
@@ -28,88 +24,73 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
-      {/* Animated background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl" />
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-10 w-full max-w-md">
+      <div className="w-full max-w-sm">
         {/* Logo */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-accent/60 flex items-center justify-center">
-            <span className="text-xl font-bold text-accent-foreground">V</span>
+        <div className="flex justify-center mb-8">
+          <div className="w-8 h-8 bg-accent rounded flex items-center justify-center">
+            <span className="text-sm font-bold text-accent-foreground">V</span>
           </div>
         </div>
 
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-semibold text-foreground mb-2 tracking-tight">
+          <h1 className="text-2xl font-medium text-foreground mb-2">
             Welcome to VanIA
           </h1>
-          <p className="text-foreground/60">Sign in to your account to continue</p>
+          <p className="text-sm text-foreground/60">Sign in to your account</p>
         </div>
 
-        {/* Login Card */}
-        <div className="border border-border/50 rounded-xl bg-card/50 backdrop-blur-sm p-8 shadow-premium">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email Field */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Email</label>
+        {/* Form Card */}
+        <div className="border border-border rounded bg-card/50 p-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Email */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-foreground uppercase tracking-wider">
+                Email
+              </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+                <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className={cn(
-                    "input-premium pl-10",
-                    error && "border-destructive focus:ring-destructive focus:border-destructive"
-                  )}
+                  className={`input-clean pl-9 ${error ? "border-destructive focus:border-destructive" : ""}`}
                   required
                 />
               </div>
             </div>
 
-            {/* Password Field */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Password</label>
+            {/* Password */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-foreground uppercase tracking-wider">
+                Password
+              </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+                <Lock className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className={cn(
-                    "input-premium pl-10",
-                    error && "border-destructive focus:ring-destructive focus:border-destructive"
-                  )}
+                  className={`input-clean pl-9 ${error ? "border-destructive focus:border-destructive" : ""}`}
                   required
                 />
               </div>
             </div>
 
-            {/* Error Message */}
+            {/* Error */}
             {error && (
-              <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/30">
-                <p className="text-sm text-destructive">{error}</p>
+              <div className="p-2.5 rounded bg-destructive/10 border border-destructive/30">
+                <p className="text-xs text-destructive">{error}</p>
               </div>
             )}
 
-            {/* Sign In Button */}
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading}
-              className={cn(
-                "w-full px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200",
-                "flex items-center justify-center gap-2",
-                isLoading
-                  ? "bg-accent/50 text-accent-foreground cursor-not-allowed"
-                  : "bg-accent text-accent-foreground hover:bg-accent/90 focus:ring-1 focus:ring-accent focus:outline-none"
-              )}
+              className="w-full px-3 py-2.5 rounded bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm transition-colors duration-150 flex items-center justify-center gap-2 mt-2"
             >
               {isLoading ? (
                 <>
@@ -126,33 +107,30 @@ export default function Login() {
           </form>
 
           {/* Divider */}
-          <div className="my-6 flex items-center gap-3">
+          <div className="my-4 flex items-center gap-3">
             <div className="flex-1 h-px bg-border" />
             <span className="text-xs text-foreground/40">OR</span>
             <div className="flex-1 h-px bg-border" />
           </div>
 
           {/* Sign Up Link */}
-          <p className="text-center text-sm text-foreground/60">
+          <p className="text-center text-xs text-foreground/60">
             Don't have an account?{" "}
-            <a
-              href="#"
-              className="text-accent hover:text-accent/80 font-medium transition-colors"
-            >
+            <a href="#" className="text-accent hover:text-accent/80 font-medium transition-colors">
               Create one
             </a>
           </p>
         </div>
 
-        {/* Footer Text */}
+        {/* Footer */}
         <p className="text-center text-xs text-foreground/40 mt-6">
           By signing in, you agree to our{" "}
           <a href="#" className="hover:text-accent transition-colors">
-            Terms of Service
+            Terms
           </a>{" "}
           and{" "}
           <a href="#" className="hover:text-accent transition-colors">
-            Privacy Policy
+            Privacy
           </a>
         </p>
       </div>
