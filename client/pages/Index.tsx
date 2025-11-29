@@ -1,61 +1,105 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useState, useCallback } from "react";
+import ChatHeader from "@/components/ChatHeader";
+import ChatMessages from "@/components/ChatMessages";
+import ChatInput from "@/components/ChatInput";
+import HamburgerMenu from "@/components/HamburgerMenu";
+import type { ReactNode } from "react";
+
+interface Message {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  isThinking?: boolean;
+}
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSendMessage = useCallback(async (userMessage: string) => {
+    if (!userMessage.trim()) return;
+
+    // Add user message
+    const userMsgId = Date.now().toString();
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: userMsgId,
+        role: "user",
+        content: userMessage,
+      },
+    ]);
+
+    setIsLoading(true);
+
+    // Add thinking state
+    const thinkingMsgId = (Date.now() + 1).toString();
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: thinkingMsgId,
+        role: "assistant",
+        content: "",
+        isThinking: true,
+      },
+    ]);
+
+    try {
+      // Simulate API call - Replace with actual API endpoint
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // Replace thinking message with actual response
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === thinkingMsgId
+            ? {
+                ...msg,
+                isThinking: false,
+                content:
+                  "This is a placeholder response from VanIA. In a production environment, this would be connected to a real AI service like OpenAI, OpenRouter, or your custom backend.",
+              }
+            : msg
+        )
+      );
+    } catch (error) {
+      console.error("Error sending message:", error);
+
+      // Replace thinking message with error
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === thinkingMsgId
+            ? {
+                ...msg,
+                isThinking: false,
+                content:
+                  "Sorry, I encountered an error. Please try again later.",
+              }
+            : msg
+        )
+      );
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
+    <div className="h-screen w-full bg-background flex overflow-hidden">
+      {/* Hamburger Menu */}
+      <div className="fixed top-4 left-4 z-50">
+        <HamburgerMenu isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />
+      </div>
+
+      {/* Main Chat Area */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <ChatHeader onMenuClick={() => setIsMenuOpen(!isMenuOpen)} />
+
+        {/* Messages */}
+        <ChatMessages messages={messages} />
+
+        {/* Input */}
+        <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
       </div>
     </div>
   );
