@@ -116,7 +116,7 @@
 @layer components {
   /* Minimal button - professional */
   .btn-minimal {
-    @apply px-3 py-2 rounded text-sm font-medium transition-colors duration-150;
+    @apply px-3 py-2 rounded text-sm transition-colors duration-150;
     @apply focus:outline-none;
   }
 
