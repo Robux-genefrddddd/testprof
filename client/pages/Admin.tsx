@@ -1,10 +1,26 @@
-import { BarChart3, Users, MessageSquare, TrendingUp, LogOut } from "lucide-react";
+import {
+  BarChart3,
+  Users,
+  MessageSquare,
+  TrendingUp,
+  LogOut,
+} from "lucide-react";
 
 export default function Admin() {
   const stats = [
     { label: "Total Users", value: "2,451", change: "+12.5%", icon: Users },
-    { label: "Active Chats", value: "8,234", change: "+8.2%", icon: MessageSquare },
-    { label: "API Requests", value: "52.3K", change: "+23.1%", icon: TrendingUp },
+    {
+      label: "Active Chats",
+      value: "8,234",
+      change: "+8.2%",
+      icon: MessageSquare,
+    },
+    {
+      label: "API Requests",
+      value: "52.3K",
+      change: "+23.1%",
+      icon: TrendingUp,
+    },
     { label: "Uptime", value: "99.97%", change: "Perfect", icon: BarChart3 },
   ];
 
@@ -30,7 +46,9 @@ export default function Admin() {
         {/* Title */}
         <div className="mb-8">
           <h2 className="text-xl text-foreground mb-1">Dashboard</h2>
-          <p className="text-xs text-foreground/60">Overview of VanIA platform</p>
+          <p className="text-xs text-foreground/60">
+            Overview of VanIA platform
+          </p>
         </div>
 
         {/* Stats Grid */}
@@ -38,10 +56,15 @@ export default function Admin() {
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div key={idx} className="card-minimal hover:border-accent/40 cursor-pointer">
+              <div
+                key={idx}
+                className="card-minimal hover:border-accent/40 cursor-pointer"
+              >
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="text-xs text-foreground/60 mb-1">{stat.label}</p>
+                    <p className="text-xs text-foreground/60 mb-1">
+                      {stat.label}
+                    </p>
                     <p className="text-lg text-foreground">{stat.value}</p>
                   </div>
                   <Icon className="w-4 h-4 text-foreground/40" />
@@ -67,7 +90,10 @@ export default function Admin() {
             <h3 className="text-sm text-foreground mb-4">Top Models</h3>
             <div className="space-y-3">
               {["GPT-4", "Claude 3", "Llama 2"].map((model, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs pb-3 border-b border-border/50 last:border-b-0 last:pb-0">
+                <div
+                  key={idx}
+                  className="flex items-center justify-between text-xs pb-3 border-b border-border/50 last:border-b-0 last:pb-0"
+                >
                   <span className="text-foreground">{model}</span>
                   <span className="font-medium text-accent">
                     {Math.floor(Math.random() * 40 + 20)}%
@@ -84,20 +110,51 @@ export default function Admin() {
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-border/50">
-                <th className="text-left py-2 px-3 text-foreground/60 font-medium">User</th>
-                <th className="text-left py-2 px-3 text-foreground/60 font-medium">Action</th>
-                <th className="text-left py-2 px-3 text-foreground/60 font-medium">Time</th>
-                <th className="text-left py-2 px-3 text-foreground/60 font-medium">Status</th>
+                <th className="text-left py-2 px-3 text-foreground/60 font-medium">
+                  User
+                </th>
+                <th className="text-left py-2 px-3 text-foreground/60 font-medium">
+                  Action
+                </th>
+                <th className="text-left py-2 px-3 text-foreground/60 font-medium">
+                  Time
+                </th>
+                <th className="text-left py-2 px-3 text-foreground/60 font-medium">
+                  Status
+                </th>
               </tr>
             </thead>
             <tbody>
               {[
-                { user: "john@example.com", action: "Started chat", time: "2m ago", status: "Active" },
-                { user: "sarah@example.com", action: "Upgraded plan", time: "15m ago", status: "Complete" },
-                { user: "mike@example.com", action: "API request", time: "42m ago", status: "Active" },
-                { user: "emma@example.com", action: "Settings updated", time: "1h ago", status: "Complete" },
+                {
+                  user: "john@example.com",
+                  action: "Started chat",
+                  time: "2m ago",
+                  status: "Active",
+                },
+                {
+                  user: "sarah@example.com",
+                  action: "Upgraded plan",
+                  time: "15m ago",
+                  status: "Complete",
+                },
+                {
+                  user: "mike@example.com",
+                  action: "API request",
+                  time: "42m ago",
+                  status: "Active",
+                },
+                {
+                  user: "emma@example.com",
+                  action: "Settings updated",
+                  time: "1h ago",
+                  status: "Complete",
+                },
               ].map((row, idx) => (
-                <tr key={idx} className="border-b border-border/30 hover:bg-secondary/20 transition-colors">
+                <tr
+                  key={idx}
+                  className="border-b border-border/30 hover:bg-secondary/20 transition-colors"
+                >
                   <td className="py-2 px-3 text-foreground">{row.user}</td>
                   <td className="py-2 px-3 text-foreground/70">{row.action}</td>
                   <td className="py-2 px-3 text-foreground/60">{row.time}</td>

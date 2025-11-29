@@ -13,7 +13,10 @@ interface ChatMessagesProps {
   onStartChat?: () => void;
 }
 
-export default function ChatMessages({ messages, onStartChat }: ChatMessagesProps) {
+export default function ChatMessages({
+  messages,
+  onStartChat,
+}: ChatMessagesProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {

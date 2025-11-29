@@ -124,7 +124,13 @@ export default {
         "dot-travel": "dot-travel 1.2s ease-in-out infinite",
       },
       fontFamily: {
-        sans: ["Inter", "Söhne", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        sans: [
+          "Inter",
+          "Söhne",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
       },
     },
   },

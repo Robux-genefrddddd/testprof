@@ -27,9 +27,7 @@ export default function Login() {
       <div className="w-full max-w-sm">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl text-foreground mb-2">
-            Welcome to VanIA
-          </h1>
+          <h1 className="text-2xl text-foreground mb-2">Welcome to VanIA</h1>
           <p className="text-sm text-foreground/60">Sign in to your account</p>
         </div>
 
@@ -109,7 +107,10 @@ export default function Login() {
           {/* Sign Up Link */}
           <p className="text-center text-xs text-foreground/60">
             Don't have an account?{" "}
-            <a href="#" className="text-accent hover:text-accent/80 font-medium transition-colors">
+            <a
+              href="#"
+              className="text-accent hover:text-accent/80 font-medium transition-colors"
+            >
               Create one
             </a>
           </p>

@@ -32,11 +32,7 @@ export default function HamburgerMenu({
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
-        {isOpen ? (
-          <X className="w-5 h-5" />
-        ) : (
-          <Menu className="w-5 h-5" />
-        )}
+        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
 
       {/* Overlay */}
@@ -52,7 +48,7 @@ export default function HamburgerMenu({
         className={cn(
           "fixed top-0 left-0 h-screen w-80 bg-sidebar-background border-r border-sidebar-border",
           "transform transition-transform duration-300 ease-out z-40 overflow-y-auto flex flex-col",
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
         {/* Header with close button */}
@@ -110,10 +106,10 @@ export default function HamburgerMenu({
 
             {/* Numbers */}
             <div className="flex items-baseline gap-1">
-              <span className="text-lg text-sidebar-foreground">
-                1,250
+              <span className="text-lg text-sidebar-foreground">1,250</span>
+              <span className="text-xs text-sidebar-foreground/50">
+                / 5,000
               </span>
-              <span className="text-xs text-sidebar-foreground/50">/ 5,000</span>
             </div>
 
             {/* Progress bar - very fine and minimal */}
@@ -123,7 +119,9 @@ export default function HamburgerMenu({
                 style={{ width: "25%" }}
               />
             </div>
-            <p className="text-xs text-sidebar-foreground/50">25% used this month</p>
+            <p className="text-xs text-sidebar-foreground/50">
+              25% used this month
+            </p>
           </div>
 
           {/* Menu items */}

@@ -63,8 +63,8 @@ export default function Index() {
                 content:
                   "This is a placeholder response from VanIA. In a production environment, this would be connected to a real AI service like OpenAI, OpenRouter, or your custom backend.",
               }
-            : msg
-        )
+            : msg,
+        ),
       );
     } catch (error) {
       console.error("Error sending message:", error);
@@ -79,8 +79,8 @@ export default function Index() {
                 content:
                   "Sorry, I encountered an error. Please try again later.",
               }
-            : msg
-        )
+            : msg,
+        ),
       );
     } finally {
       setIsLoading(false);
