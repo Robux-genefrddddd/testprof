@@ -28,10 +28,10 @@ export default function ChatMessages({ messages }: ChatMessagesProps) {
         <div className="h-full flex flex-col items-center justify-center text-center py-16">
           <div className="mb-6">
             <div className="w-12 h-12 bg-accent rounded flex items-center justify-center mx-auto mb-4">
-              <span className="text-xl font-bold text-accent-foreground">V</span>
+              <span className="text-xl text-accent-foreground">Ask</span>
             </div>
           </div>
-          <h2 className="text-lg font-medium text-foreground mb-2">Welcome to VanIA</h2>
+          <h2 className="text-lg text-foreground mb-2">Welcome to VanIA</h2>
           <p className="text-sm text-foreground/60 max-w-sm">
             Ask anything. VanIA will help you explore new ideas.
           </p>
