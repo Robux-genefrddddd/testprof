@@ -3,7 +3,6 @@ import ChatHeader from "@/components/ChatHeader";
 import ChatMessages from "@/components/ChatMessages";
 import ChatInput from "@/components/ChatInput";
 import HamburgerMenu from "@/components/HamburgerMenu";
-import type { ReactNode } from "react";
 
 interface Message {
   id: string;
