@@ -42,11 +42,11 @@ export default function Admin() {
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <p className="text-xs text-foreground/60 mb-1">{stat.label}</p>
-                    <p className="text-lg font-semibold text-foreground">{stat.value}</p>
+                    <p className="text-lg text-foreground">{stat.value}</p>
                   </div>
                   <Icon className="w-4 h-4 text-foreground/40" />
                 </div>
-                <p className="text-xs text-accent font-medium">{stat.change}</p>
+                <p className="text-xs text-accent">{stat.change}</p>
               </div>
             );
           })}
